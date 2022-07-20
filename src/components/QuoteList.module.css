@@ -21,3 +21,15 @@
 .quotesContainer a div {
     margin-bottom: 20px;
 }
+
+.quotesContainer hr {
+    border-top: 1px solid #8c8b8b;
+    margin: 30px 0;
+}
+
+
+
+.quotesContainer .author {
+    color: #101010;
+    font-size: 16px;
+}

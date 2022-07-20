@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 import styles from './QuoteList.module.css'
 
 const QuoteList = () => {
-    const [quotes, setQuotes] = useState([])
+    const [quotes, setQuotes] = useState({})
     const quotesLength = 4;
 
     const getQuoteData = async (id) => {
         const response = await fetch(`https://indie-hackers.firebaseio.com/loadingQuotes/${id}.json`)
             .then(res => res.json())
 
-        console.log(typeof response)
-            
-        setQuotes(oldQuotes => [...new Set([...oldQuotes, response])])
+        const quoteData = {};
+        quoteData[id] = response;
+
+        setQuotes(prevState => { return {...prevState, ...quoteData}})
     }
 
     useEffect(() => {
@@ -20,12 +21,15 @@ const QuoteList = () => {
         }
     }, [])
 
-    const quoteItems = quotes.map((quoteItem, index) =>
-        <a key={ index } href={ quoteItem.url } target="_blank">
-            <div>
-                "{ quoteItem.quote }"
-            </div>
-        </a>
+    const quoteItems = Object.keys(quotes).map((key) =>
+        <>
+            <a key={ key } href={ quotes[key].url } target="_blank">
+                <div>
+                    "{ quotes[key].quote }" <span className={ styles.author }>- { quotes[key].byline }</span>
+                </div>
+            </a>
+            <hr />
+        </>
     );
 
     return (
@@ -33,6 +37,10 @@ const QuoteList = () => {
             <h1>Indie Hackers Quotes</h1>
             <div className={ styles.quotesContainer }>
                 { quoteItems }
+                <div className={ styles.paginationButtons }>
+                    <span onClick={ () => alert("back")}>⬅️</span> 
+                    <span  onClick={ () => alert("next")}>➡️</span>
+                </div>
             </div>
         </>
     )
