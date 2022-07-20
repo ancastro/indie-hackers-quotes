@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/indie-hackers-quotes/static/css/main.e3064fd4.css",
+    "main.js": "/indie-hackers-quotes/static/js/main.bfaeb3ec.js",
+    "static/js/787.04e75c4b.chunk.js": "/indie-hackers-quotes/static/js/787.04e75c4b.chunk.js",
+    "index.html": "/indie-hackers-quotes/index.html",
+    "main.e3064fd4.css.map": "/indie-hackers-quotes/static/css/main.e3064fd4.css.map",
+    "main.bfaeb3ec.js.map": "/indie-hackers-quotes/static/js/main.bfaeb3ec.js.map",
+    "787.04e75c4b.chunk.js.map": "/indie-hackers-quotes/static/js/787.04e75c4b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3064fd4.css",
+    "static/js/main.bfaeb3ec.js"
+  ]
+}
