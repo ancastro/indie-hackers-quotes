@@ -1,0 +1,23 @@
+.quotesContainer {
+    background-color: #FFFFFF;
+    width: 70%;
+    padding: 70px 70px;
+    border-radius: 14px;
+    margin: 100px auto;
+}
+
+.quotesContainer a {
+    text-decoration: none;
+    color: #101010;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.quotesContainer a:hover {
+    color: #cebdac;
+    cursor: pointer;
+}
+
+.quotesContainer a div {
+    margin-bottom: 20px;
+}
